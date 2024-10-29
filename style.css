@@ -1,0 +1,43 @@
+body {
+  background: linear-gradient(white, aliceblue, aquamarine);
+  background: linear-gradient(
+    white 0%,
+    rgb(220, 237, 253) 45%,
+    aquamarine 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  font-size: 1.5em;
+}
+div {
+  background-color: white;
+  text-align: center;
+  width: 350px;
+  margin: 0 auto;
+  height: 300px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(201, 201, 201, 0.596);
+  position: relative;
+}
+
+div::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(to right, blue, purple, magenta);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+div:hover::after {
+  opacity: 1;
+}
